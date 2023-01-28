@@ -2,12 +2,19 @@ package com.inditex.entity.db;
 
 import com.inditex.entity.type.CurrencyType;
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Prices {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

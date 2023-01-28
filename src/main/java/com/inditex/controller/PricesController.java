@@ -40,7 +40,4 @@ public class PricesController {
             ){
         return new ResponseEntity(pricesService.getPrice(applicationDate, productId, brandId), HttpStatus.OK);
     }
-
-
-
 }
