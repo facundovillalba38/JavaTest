@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.Min;
 import java.time.LocalDateTime;
 
 @RestController
@@ -29,10 +30,12 @@ public class PricesController {
     @Operation(summary = "Get Prices for an specific Application Date, Product and Brand.")
     public ResponseEntity<PricesDto> getPrice(
             @Parameter(description = "Application Date", example = "2020-06-14 00:00:00")
-                    @RequestParam LocalDateTime applicationDate,
-            @Parameter(description = "Product Id", example = "3455")
+                    @RequestParam String applicationDate,
+            @Parameter(description = "Product Id", example = "35455")
+                    @Min(1)
                     @RequestParam Long productId,
             @Parameter(description = "Brand Id", example = "1")
+                    @Min(1)
                     @RequestParam Long brandId
             ){
         return new ResponseEntity(pricesService.getPrice(applicationDate, productId, brandId), HttpStatus.OK);

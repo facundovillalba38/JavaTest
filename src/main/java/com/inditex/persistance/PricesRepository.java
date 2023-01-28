@@ -11,11 +11,10 @@ import java.util.List;
 @Repository
 public interface PricesRepository extends JpaRepository<Prices, Long> {
 
-    @Query(value = "SELECT * FROM vw_API_GetProductos_Precios " +
-            " WHERE dbo.vw_API_GetProductos_Precios.ProductoID = ?1"+
-            " AND dbo.vw_API_GetProductos_Precios.EmpresaID = ?2" +
-            " AND dbo.vw_API_GetProductos_Precios.SucursalID = ?3",
+    @Query(value = "SELECT * FROM PRICES WHERE BRAND_ID = ?3 " +
+            "AND PRODUCT_ID = ?2 AND " +
+            "?1 BETWEEN START_DATE AND END_DATE;",
             nativeQuery = true)
-    List<Prices> findPriceByDateAndProductAndBrand(LocalDateTime applicationDate, Long productId, Long brandId);
+    List<Prices> findPriceByDateAndProductAndBrand(String applicationDate, Long productId, Long brandId);
 
 }
