@@ -26,7 +26,7 @@ public class PricesController {
         this.pricesService = pricesService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     @Operation(summary = "Get Prices for an specific Application Date, Product and Brand.")
     public ResponseEntity<PricesDto> getPrice(
             @Parameter(description = "Application Date", example = "2020-06-14 00:00:00")
