@@ -22,6 +22,7 @@ class PricesControllerTest {
         RestAssured.port = port;
     }
 
+    /* Test 1: petición a las 10:00 del día 14 del producto 35455   para la brand 1 (ZARA) */
     @Test
     void getPriceControllerTest1() {
         PricesDto pricesDto = RestAssured.given()
@@ -33,6 +34,7 @@ class PricesControllerTest {
         assertEquals(35.5, pricesDto.getPrice());
     }
 
+    /* Test 2: petición a las 16:00 del día 14 del producto 35455   para la brand 1 (ZARA) */
     @Test
     void getPriceControllerTest2() {
         PricesDto pricesDto = RestAssured.given()
@@ -44,6 +46,7 @@ class PricesControllerTest {
         assertEquals(25.45, pricesDto.getPrice());
     }
 
+    /* Test 3: petición a las 21:00 del día 14 del producto 35455   para la brand 1 (ZARA) */
     @Test
     void getPriceControllerTest3() {
         PricesDto pricesDto = RestAssured.given()
@@ -55,6 +58,7 @@ class PricesControllerTest {
         assertEquals(35.5, pricesDto.getPrice());
     }
 
+    /* Test 4: petición a las 10:00 del día 15 del producto 35455   para la brand 1 (ZARA) */
     @Test
     void getPriceControllerTest4() {
         PricesDto pricesDto = RestAssured.given()
@@ -66,6 +70,7 @@ class PricesControllerTest {
         assertEquals(30.5, pricesDto.getPrice());
     }
 
+    /* Test 5: petición a las 21:00 del día 16 del producto 35455   para la brand 1 (ZARA) */
     @Test
     void getPriceControllerTest5() {
         PricesDto pricesDto = RestAssured.given()
